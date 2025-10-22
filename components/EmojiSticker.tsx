@@ -10,8 +10,10 @@ type Props = {
 
 export default function EmojiSticker({ imageSize, stickerSource }: Props) {
   const scaleImage = useSharedValue(imageSize);
-  const translateX = useSharedValue(20);
-  const translateY = useSharedValue(20);
+
+  // change the values for positioning the image
+  const translateX = useSharedValue(0);
+  const translateY = useSharedValue(0);
 
   const drag = Gesture.Pan().onChange(event => {
   translateX.value += event.changeX;
